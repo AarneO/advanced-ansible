@@ -1,0 +1,23 @@
+- name: install postgresql
+  package:
+    name: postgresql-server
+    state: present
+  register: pgsql_install
+
+- name: enable postgres at boot
+  service:
+    name: postgresql
+    enabled: yes
+
+- name: initilize postgres
+  command: postgresql-setup initdb
+  when: pgsql_install.changed
+
+- name: initilize postgres some more
+  command: chkconfig postgresql on
+  when: pgsql_install.changed
+
+- name: start postgres
+  service:
+    name: postgresql.service
+    state: started
