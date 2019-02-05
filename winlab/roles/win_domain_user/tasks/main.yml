@@ -1,0 +1,11 @@
+--
+- name: Create users
+  win_domain_user:
+    name: "{{ username }}"
+    firstname: "{{ firstname }}"
+    surname: "{{ surname }}"
+    password: "{{ password }}"
+    state: present
+    groups:
+      - "{{ group }}"
+  loop: "{{ userlist }}"
