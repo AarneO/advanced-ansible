@@ -6,6 +6,7 @@
     surname: "{{ item.surname }}"
     password: "{{ item.password }}"
     state: present
+    email: "{{ item.username }}@{{ ad_domain_name }}"
     groups:
       - "{{ item.group }}"
   loop: "{{ user_info }}"
