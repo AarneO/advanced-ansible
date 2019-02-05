@@ -1,4 +1,10 @@
 ---
+- name: Create groups
+  win_domain_group:
+    name: "{{ item.group }}"
+    scope: "{{ group_scope }}"
+  loop: "{{ user_info }}"
+
 - name: Create users
   win_domain_user:
     name: "{{ item.username }}"
