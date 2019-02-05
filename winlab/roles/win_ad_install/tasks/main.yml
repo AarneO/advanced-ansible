@@ -4,11 +4,13 @@
     name: AD-Domain-Services
     state: present
 
-- name: Setup my AD
-  win_domain_controller:
+- name: ensure AD configured
+  win_domain:
     dns_domain_name: ad1.{{ GUID }}.example.opentlc.com
     safe_mode_password: "{{ domain_password }}"
+
+- name: Setup my AD
+  win_domain_controller:
     domain_admin_user: admin@ad1.{{ GUID }}.example.opentlc.com
     domain_admin_password: "{{ domain_password }}"
     state: domain_controller
-
