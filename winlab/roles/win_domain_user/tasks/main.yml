@@ -1,4 +1,4 @@
---
+---
 - name: Create users
   win_domain_user:
     name: "{{ username }}"
