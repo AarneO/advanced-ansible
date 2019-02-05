@@ -16,7 +16,7 @@
 
 - name: Setup my AD
   win_domain_controller:
-    domain_admin_user: admin@{{ ad_domain_name }}
+    domain_admin_user: "{{ ad_admin_user}} "
     domain_admin_password: "{{ ansible_password }}"
     state: domain_controller
-    dns_domain_name: {{ ad_domain_name }}
+    dns_domain_name: "{{ ad_domain_name }}""
