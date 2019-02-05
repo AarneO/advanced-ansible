@@ -1,10 +1,10 @@
 ---
 - name: Create users
   win_domain_user:
-    name: "{{ username }}"
-    firstname: "{{ firstname }}"
-    surname: "{{ surname }}"
-    password: "{{ password }}"
+    name: "{{ item.username }}"
+    firstname: "{{ item.firstname }}"
+    surname: "{{ item.surname }}"
+    password: "{{ item.password }}"
     state: present
     groups:
       - "{{ group }}"
