@@ -1,0 +1,14 @@
+---
+- name: Install AD
+  win_feature:
+    name: AD-Domain-Services
+    state: present
+
+- name: Setup my AD
+  win_domain_controller:
+    dns_domain_name: ad1.${GUID}.example.opentlc.com
+    safe_mode_password: jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
+    domain_admin_user: admin@ad1.${GUID}.example.opentlc.com
+    domain_admin_password: jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
+    state: domain_controller
+
