@@ -12,7 +12,7 @@
 
 - name: reboot
   win_reboot:
-     when: domaininstall.reboot_required
+  when: domaininstall.reboot_required
 
 - name: Setup my AD
   win_domain_controller:
