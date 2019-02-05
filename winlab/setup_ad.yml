@@ -2,6 +2,6 @@
 - name: implement domain controller
   hosts: windows
   vars:
-    - /vars/advars.yml
+    - vars/advars.yml
   roles:
     - win_ad_install
