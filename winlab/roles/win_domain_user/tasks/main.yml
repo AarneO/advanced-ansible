@@ -13,6 +13,7 @@
     password: "{{ item.password }}"
     state: present
     email: "{{ item.username }}@{{ ad_domain_name }}"
+    update_password: on_create
     groups:
       - "{{ item.group }}"
   loop: "{{ user_info }}"
