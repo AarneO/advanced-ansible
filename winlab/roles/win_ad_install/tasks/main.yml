@@ -21,3 +21,4 @@
     domain_admin_password: "{{ ansible_password }}"
     state: domain_controller
     dns_domain_name: "{{ ad_domain_name }}"
+    safe_mode_password: "{{ ansible_password }}"
