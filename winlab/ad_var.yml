@@ -1,4 +1,4 @@
-userlist:
+user_info:
   - { username: "james", firstname: "James", surname: "Jockey", password: "redhat@123", email: "{{ username }}@{{ ad_domain_name }}", group: "dev" }
   - { username: "bill", firstname: "Bill", surname: "Gates", password: "redhat@123", email: "{{ username }}@{{ ad_domain_name }}", group: "dev" }
   - { username: "mickey", firstname: "Mickey", surname: "Mouse", password: "redhat@123", email: "{{ username }}@{{ ad_domain_name }}", group: "qa" }
