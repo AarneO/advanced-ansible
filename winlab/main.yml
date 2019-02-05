@@ -1,7 +1,6 @@
 ---
 - name: implement domain controller
   hosts: windows
-  vars:
-    domain_password: jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
+
   roles:
     - win_ad_install
