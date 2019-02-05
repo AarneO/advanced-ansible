@@ -14,3 +14,4 @@
     domain_admin_user: admin@ad1.{{ GUID }}.example.opentlc.com
     domain_admin_password: "{{ domain_password }}"
     state: domain_controller
+    dns_domain_name: ad1.{{ GUID }}.example.opentlc.com
