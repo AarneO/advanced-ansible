@@ -22,3 +22,10 @@
     state: domain_controller
     dns_domain_name: "{{ ad_domain_name }}"
     safe_mode_password: "{{ ansible_password }}"
+
+- name: check config
+  win_command: nltest /dclist:"{{ ad_domain_name }}"
+  register: nltest
+
+- debug:
+    var: nltest
