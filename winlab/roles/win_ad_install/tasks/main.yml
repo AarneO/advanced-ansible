@@ -12,6 +12,7 @@
 
 - name: reboot
   win_reboot:
+    msg: "rebooting {{ inventory_hostname }}"
   when: domaininstall.reboot_required
 
 - name: Setup my AD
