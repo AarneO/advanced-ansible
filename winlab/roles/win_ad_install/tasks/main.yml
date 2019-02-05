@@ -6,7 +6,7 @@
 
 - name: ensure AD configured
   win_domain:
-    dns_domain_name: ad1.{{ GUID }}.example.opentlc.com
+    dns_domain_name: {{ ad_domain_name }}
     safe_mode_password: "{{ ansible_password }}"
   register: domaininstall
 
@@ -16,7 +16,7 @@
 
 - name: Setup my AD
   win_domain_controller:
-    domain_admin_user: admin@ad1.{{ GUID }}.example.opentlc.com
+    domain_admin_user: admin@{{ ad_domain_name }}
     domain_admin_password: "{{ ansible_password }}"
     state: domain_controller
-    dns_domain_name: ad1.{{ GUID }}.example.opentlc.com
+    dns_domain_name: {{ ad_domain_name }}
